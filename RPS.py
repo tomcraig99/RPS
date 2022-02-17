@@ -1,13 +1,17 @@
+#get class and necessary library
 import RPSclass as r
 import time
 
+#main
 def main():
+    #create objects
     opponent = r.Opponent()
     player = r.Player()
+    #calling important functions
     mainMenu()
     play(opponent,player)
 
-
+#function to display the main menu
 def mainMenu():
     print('*'*40)
     print(format('Welcome to Rock Paper scissors!','^40'), '\n')
@@ -17,7 +21,7 @@ def mainMenu():
         rules()
     print('*'*40)
 
-
+#function to display the rules
 def rules():
     print('*'*40)
     print('1. The goal of the game is to win 5 times!')
@@ -27,11 +31,12 @@ def rules():
     print('3. Rock beats scissors, scissors beats \npaper, and paper beats rock.')
     time.sleep(4)
 
-
+#function to play the game
 def play(opponent,player):
+    #initializing variables
     playerWins = 0
     opponentWins = 0
-
+    #loop until a player wins
     while True:
         if opponentWins == 5:
             break
@@ -45,7 +50,7 @@ def play(opponent,player):
         time.sleep(2)
         print('You chose:', pla, '\n')
         time.sleep(2)
-
+        #win logic
         if opp == pla:
             print('The result is a tie!\n')
         elif opp == 'rock' and pla == 'paper':
